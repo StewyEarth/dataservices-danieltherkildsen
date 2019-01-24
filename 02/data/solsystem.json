@@ -1,0 +1,30 @@
+{
+	"maelkevejen":{
+		"voresSolsytem": {
+			"planeter":{
+				"planeterUdenMaaner": ["Merkur","Venus"],
+				"planeterMedMaaner": {
+					"jorden":"Månen",
+					"mars":["Phobos","Deimos"] ,
+					"jupiter":{
+						"treStoerstemaaner":["Ganymedes","Callisto","Io"],
+						"treMindstemaaner":["S/2003 J 12","S/2003 J 9","S/2010 J 1"]
+					},
+					"saturn":{
+						"treStoerstemaaner":["Titan","Rhea","Iapetus"],
+						"treMindstemaaner":["S/2004 S 3","Methone","Polydeuces"]
+					},
+					"uranus":{
+						"treStoerstemaaner":["Titania","Oberon","Ariel"],
+						"treMindstemaaner":["S/2003 U 3","S/2001 U 2","Francisco"]
+					},
+					"neptun":{
+						"treStoerstemaaner":["Triton","Proteus","Nereid"],
+						"treMindstemaaner":["S/2004 N 1","Psamathe","Halimedes"]
+					}
+				}
+			},
+			"stjerner": "Solen"
+		}
+	}
+}

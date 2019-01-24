@@ -1,0 +1,65 @@
+{
+    "fornavn": "Emil",
+    "alder": 21,
+    "isDedInside": true,
+    "bil": {
+        "topHastighed": 3
+    },
+    "yndlingsFilm": [
+        "gremlins",
+        "aliens"
+    ],
+    "characters": {
+        "games": {
+            "destiny": {
+                "vanguard": [
+                "Zavala",
+                "Ikora",
+                "Cayde"
+            ],
+                "enemies": [
+                "Hive",
+                "Fallen",
+                "Cabal",
+                "Taken"
+            ]
+                },
+                "mario": [
+                "Mario",
+                "peach",
+                "Daisy",
+                "Yoshi"
+            ]
+        },
+        "movies": {
+            "madMax": [
+                "Immortan Joe",
+                "Max Rockatansky",
+                "Rictus Erectus",
+                "Imperator Furiosa"
+            ],
+            "shows": {
+                "dbz": {
+                    "Saiyans": [
+                    "Carrot",
+                    "Vegetable",
+                    "Broccoli"
+                    ],
+                    "villains": {
+                        "coldRace": [
+                            "Frieza",
+                            "Cooler",
+                            "King Cold"
+                        ],
+                        "androids": [
+                            "android 16",
+                            "android 17",
+                            "android 18",
+                            "cell"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
