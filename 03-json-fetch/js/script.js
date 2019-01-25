@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 	buttonContainerElem.addEventListener("click",(event) =>{
 		if (event.target.tagName == "BUTTON"){
 			getinfo(event.target.getAttribute("data"))
-			// console.log(event.target.getAttribute("data"))
 		}
 	})
 
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 			.then( (response) => {
 				return response.json();
 			})
-			.then((data) => {
+			.then((data) => { // Her er data klar til kodning
 				filmInfoElem.innerHTML = `<strong>Title:</strong> ${data.Title}<br> <strong>Released:</strong> ${data.Released}<br><hr><strong>Ratings</strong><br><strong> Imdb</strong> score: ${data.imdbRating}<br>`
 				data.Ratings.forEach(rating => {
 					filmInfoElem.innerHTML += `<strong>${rating.Source}</strong>, Score: ${rating.Value}<br>`
