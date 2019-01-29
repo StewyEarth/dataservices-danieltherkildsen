@@ -18,9 +18,7 @@ body{
 .fadeout{
     opacity: 0;
 }
-.fadein{
-    opacity: 1;
-}
+
 .ball1,.ball2,.ball3{
     background-color: azure;
     max-width: 50px;
