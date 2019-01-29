@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 	function checkFetches(){
 		fetchesDone++;
 		if (fetchesDone == fetchCount){
-			console.log(rickandmortycharacterspage1)
 			rickandmortycharacterspage1.forEach(character => {
 				characterUlElem.innerHTML += `<li><img src="${character.image}"><div> ${character.name}<ul><li>Status: ${character.status}</li><li>Gender: ${character.gender}</li><li>Location: ${character.location.name}</li><li>Origin: ${character.origin.name}</li></ul></div></li>`
 				// console.log(character.name)
