@@ -1,0 +1,163 @@
+body{
+	margin: 0;
+	background-color: #242029;
+}
+img{
+	max-width: 150px;
+	max-height: 150px;
+}
+header{
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1em 0;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+header h1{
+	font-size: 2em;
+}
+
+#characterlist{
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	background-color: #27212E;
+	margin: 0;
+	list-style-type: none;
+	padding: 1em;
+}
+#characterlist > li{
+	display: flex;
+	align-items: center;
+	padding: 0 0 .2em 0;
+	margin-bottom: 1em;
+	border-bottom: 1px solid darkgray;
+}
+#characterlist > li:last-of-type{
+	margin-bottom: .5em;
+}
+#characterlist li ul{
+	list-style-type: none;
+	padding: 0;
+}
+#characterlist li li{
+	font-style: italic;
+	color: #bbbbbb;
+	margin: .2em 0;
+}
+#characterlist div{
+	margin-left: 1em;
+}
+.pagenavigation{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.pagenavigation p{
+	color: white;
+	margin: 0 0 1em 0;
+}
+
+
+
+/*Loader*/
+
+.loading{
+    overflow: hidden;
+}
+.loader{
+    background-color: #0F111A;
+    min-height: 100vh;
+    width: 100%;
+    transition: all .5s;
+    display: none;
+    position: absolute;
+    top: 0;
+}
+.fadeout{
+    opacity: 0;
+}
+.fadein{
+    opacity: 1;
+}
+.ball1,.ball2,.ball3{
+    background-color: azure;
+    max-width: 50px;
+    max-height: 50px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.ball1{
+    animation: ball1 5s infinite;
+}
+.ball2{
+    animation: ball2 5s infinite;
+}
+.ball3{
+    animation: ball3 5s infinite;
+}
+
+
+@keyframes ball1{
+    0%   {
+        left:50%;
+    }
+    25%  {
+        left:30%;
+    }
+    50%  {
+        left:50%;
+    }
+    75%  {
+        left:70%;
+    }
+    85%{
+        left: 70%;
+    }
+    95% {
+        left:50%;
+    }
+}
+@keyframes ball2{
+    0%   {
+        left:50%;
+    }
+    25%  {
+        left:30%;
+    }
+    50%  {
+        left:30%;
+    }
+    75%  {
+        left:30%;
+    }
+    85% {
+        left:30%;
+    }
+    95%{
+        left:50%;
+    }
+}
+@keyframes ball3{
+    0%   {
+        left:50%;
+    }
+    25%  {
+        left:30%;
+    }
+    50%  {
+        left:50%;
+    }
+    75%  {
+        left:50%;
+    }
+    85% {
+        left:50%;
+    }
+}

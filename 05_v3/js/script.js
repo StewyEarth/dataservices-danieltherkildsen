@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
+	var loader = document.querySelector(".loader");
+
+	loader.addEventListener("transitionend",function(){
+		loader.style.display = "none";
+		loader.classList.remove("fadeout");
+	});
+
 	let characterUlElem = document.querySelector("#characterlist");
 	let prevBtnElem = document.querySelector("#prev");
 	let nextBtnElem = document.querySelector("#next");
@@ -48,7 +55,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
+
+
 	function showpage(page){
+		loaderShow();
 		currentPage = page;
 		fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
 		.then((response) =>{
@@ -59,9 +69,19 @@ document.addEventListener("DOMContentLoaded",()=>{
 			currentpageElem.innerHTML = `Page ${page}/${maxPageCount}`
 			data.results.forEach(character => {
 				characterUlElem.innerHTML += `<li><img src="${character.image}"><div> ${character.name}<ul><li>Status: ${character.status}</li><li>Gender: ${character.gender}</li><li>Location: ${character.location.name}</li><li>Origin: ${character.origin.name}</li></ul></div></li>`
+				loaderHidden();
 				// console.log(character.name)
 			});
 			
 		});
 	};
+	function loaderHidden(){
+		loader.classList.add("fadeout");
+	}
+	function loaderShow(){
+		scroll(0,0);
+		loader.style.top = pageYOffset;
+		loader.style.display = "flex";
+	}
 });
+

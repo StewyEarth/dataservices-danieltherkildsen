@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
+	var loader = document.querySelector(".loader");
+
 	let characterUlElem = document.querySelector("#characterlist");
-	let prevBtnElem = document.querySelector("#prev");
-	let nextBtnElem = document.querySelector("#next");
-	let currentpageElem = document.querySelector("#currentpage");
+	let prevBtnElems = document.querySelectorAll("#prev");
+	let nextBtnElems = document.querySelectorAll("#next");
+	let currentpageElems = document.querySelectorAll("#currentpage");
 	let currentPage = 1;
 	let minPageCount = 1;
 	let maxPageCount = 25;
@@ -34,34 +36,66 @@ document.addEventListener("DOMContentLoaded",()=>{
 		}
 	}
 
-	prevBtnElem.addEventListener("click",()=>{
-		currentPage--
-		restrictPageNumber();
-		showpage(currentPage)
+	//Prev page
+	prevBtnElems.forEach(prevBtnElem => {
+		prevBtnElem.addEventListener("click",()=>{
+			currentPage--
+			restrictPageNumber();
+			showpage(currentPage)
+		});
 	});
 
-	nextBtnElem.addEventListener("click",()=>{
-		currentPage++
-		restrictPageNumber();
-		showpage(currentPage)
+	//Next page
+	nextBtnElems.forEach(nextBtnElem => {
+		nextBtnElem.addEventListener("click",()=>{
+			currentPage++
+			restrictPageNumber();
+			showpage(currentPage)
+		});
 	});
 
 
 
+
+
+	/**
+	 * 
+	 * @param {number} page - Shows api page of characters
+	 */
 	function showpage(page){
+		loaderShow();
 		currentPage = page;
 		fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
 		.then((response) =>{
 			return response.json();
 		})
 		.then((data)=>{
+
 			characterUlElem.innerHTML = ""
-			currentpageElem.innerHTML = `Page ${page}/${maxPageCount}`
+
+			currentpageElems.forEach(currentpageElem => {
+				currentpageElem.innerHTML = `Page ${page}/${maxPageCount}`
+			});
+			
 			data.results.forEach(character => {
 				characterUlElem.innerHTML += `<li><img src="${character.image}"><div> ${character.name}<ul><li>Status: ${character.status}</li><li>Gender: ${character.gender}</li><li>Location: ${character.location.name}</li><li>Origin: ${character.origin.name}</li></ul></div></li>`
-				// console.log(character.name)
+
+				loaderHidden();
+				
 			});
 			
 		});
 	};
+	function loaderHidden(){
+		loader.classList.add("fadeout");
+	}
+	function loaderShow(){
+		scroll(0,0);
+		loader.style.display = "flex";
+	}
+	loader.addEventListener("transitionend",function(){
+		loader.style.display = "none";
+		loader.classList.remove("fadeout");
+	});
 });
+
